@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "90128815569",
+    "firebase_url": "https://facelens-admin-13cc5.firebaseio.com",
+    "project_id": "facelens-admin-13cc5",
+    "storage_bucket": "facelens-admin-13cc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90128815569:android:3c21e711edfae527",
+        "android_client_info": {
+          "package_name": "com.example.flutter_realtime_crop_faces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90128815569-n70rhmcm7mrt82qipq8sliffi46a3h63.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT5PBmfugiSbstAH7r0ZT-RXqZ_JPazmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90128815569-n70rhmcm7mrt82qipq8sliffi46a3h63.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
