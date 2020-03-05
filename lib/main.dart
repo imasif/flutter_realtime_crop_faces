@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'ui/loginpage.dart';
-import 'ui/homepage.dart';
-import 'ui/EnrollPage.dart';
 import 'ui/camera_preview/camera_preview_scanner.dart';
 
 void main() => runApp(RTFaceCrop());
@@ -16,75 +13,16 @@ class RTFaceCrop extends StatefulWidget {
 }
 
 class _AppState extends State<RTFaceCrop>{
-  String initRoute;
-  var _loginData;
-  
-  getLoginData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-
-    return prefs.get('loginData');
-  }
-
-
   @override
   initState() {
     super.initState();
-    getLoginData().then((loginData){
-    // print('loginData in');
-    print(loginData);
-      setState(() {
-          _loginData = loginData;
-      });
-    });
   }
-
-  // callback(newInit) {
-  //     setState(() {
-  //       initRoute = newInit;
-  //     });
-  // }
 
   @override
   Widget build(BuildContext context) {
-    // print('loginData out');
-    dynamic _initPage;
-    if(_loginData == null){
-      _initPage = LoginPage();
-    }else{
-      if(json.decode(_loginData)['data'] == null){
-        _initPage = LoginPage();
-      }else{
-        _initPage = HomePage();
-      }
-    }
-    // print();
-
       return MaterialApp(
         home: CameraPreviewScanner(),
-        routes: <String, WidgetBuilder>{
-        '/login': (BuildContext context) => new LoginPage(),
-        '/home': (BuildContext context) => new HomePage(),
-        '/enroll': (BuildContext context) => new EnrollPage(),
-        '/faceDetect': (BuildContext context) => new CameraPreviewScanner()
-      },
       );
-    // if(_loginData == null){
-    //   return MaterialApp(
-    //     home: LoginPage()
-    //   );
-    // }
-    // else{
-      // return MaterialApp(
-      //   //title: appTitle,
-      //   initialRoute: '/',
-      //   routes: {
-      //     '/': (context) => HomePage(),
-      //   }
-      // );
-      // return MaterialApp(
-      //   home: HomePage()
-      // );
-    // }
   }
 
 }
